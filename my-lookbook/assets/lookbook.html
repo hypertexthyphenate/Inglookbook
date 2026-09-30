@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collection Lookbook</title>
+
+  <!-- 1. Include DearFlip CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dflip/css/dflip.min.css" />
+  <!-- Optional: Include Icon Fonts for navigation controls -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dflip/css/themify-icons.min.css" />
+
+  <style>
+    /* Clean layout styling */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f4f4f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 10px;
+      box-sizing: border-box;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #18181b;
+      margin: 0 0 8px 0;
+    }
+
+    header p {
+      color: #71717a;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Flipbook container box */
+    .flipbook-viewport {
+      width: 100%;
+      height: 650px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Spring / Summer Collection</h1>
+      <p>Swipe or click the page corners to flip through the catalog.</p>
+    </header>
+
+    <!-- 2. Flipbook Container Element -->
+    <div id="my-flipbook" class="flipbook-viewport"></div>
+  </div>
+
+  <!-- 3. Include Required JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dflip/js/dflip.min.js"></script>
+
+  <!-- 4. Initialize the Flipbook -->
+  <script>
+    jQuery(document).ready(function ($) {
+      // Configuration options
+      var options = {
+        height: '100%',
+        webgl: true, // Enables true 3D page bending physics
+        duration: 800,
+        backgroundColor: "transparent",
+        soundEnable: true
+      };
+
+      // Path to your PDF file
+      var pdfUrl = "D:\my-lookbook\assets\lookbook.pdf.pdf";
+
+      // Bind the flipbook to the target div container
+      $("#my-flipbook").flipBook(pdfUrl, options);
+    });
+  </script>
+
+</body>
+</html>
